@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    background-color: #0d0d0d; /* Dark background for contrast */
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: background-color 0.5s ease;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 1); /* Fully opaque when scrolled */
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #b74b4b;
+    transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+.projects {
+    padding: 8rem 9% 5rem; /* Padding for top and bottom */
+    text-align: center; /* Center align text */
+    position: relative; /* Relative position for overlapping footer */
+    z-index: 1; /* Ensure projects are above footer */
+}
+
+.projects h1 {
+    font-size: 4rem; /* Main title size */
+    margin: 4rem 0 2rem; /* Space above and below title */
+    color: #b74b4b; /* Title color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.project {
+    background-color: #1a1a1a; /* Slightly lighter background for project boxes */
+    border-radius: 12px; /* Rounded corners */
+    padding: 2rem; /* Internal padding */
+    margin: 2rem 0; /* Space between projects */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Soft shadow for depth */
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.project h2 {
+    font-size: 2.5rem; /* Sub-title size */
+    color: #b74b4b; /* Sub-title color */
+    margin-bottom: 1rem; /* Space below sub-title */
+}
+
+.project p {
+    font-size: 1.6rem; /* Paragraph text size */
+    color: white; /* Paragraph text color */
+    line-height: 1.5; /* Spacing between lines for readability */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center; /* Center align footer text */
+    padding: 1.5rem 0; /* Padding above and below footer */
+    background-color: #161616; /* Dark background for footer */
+    position: fixed; /* Fixed positioning to stay at the bottom */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+    z-index: 10; /* Above other elements */
+}
+
+footer p {
+    color: white; /* Footer text color */
+    font-size: 1.4rem; /* Adjust font size for better visibility */
+    margin: 0; /* Remove margin for proper alignment */
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .projects h1 {
+        font-size: 3rem; /* Adjust title size for smaller screens */
+    }
+
+    .project h2 {
+        font-size: 2rem; /* Adjust project title size */
+    }
+
+    .project p {
+        font-size: 1.4rem; /* Adjust paragraph text size */
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 1rem 5%; /* Adjust header padding for smaller screens */
+    }
+
+    nav a {
+        font-size: 1.6rem; /* Adjust font size for navigation */
+        margin-left: 2rem; /* Adjust margin for navigation */
+    }
+}
